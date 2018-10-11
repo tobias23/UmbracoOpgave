@@ -1,0 +1,33 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Master>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = null;
+}
+
+<link rel="stylesheet" href="/Content/bootstrap.min.css"><link />
+<link rel="stylesheet" href="~/css/Styles.css"><link />
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
+<h1 align="middle">Aarhus WebDev Coop.</h1>
+
+<header>
+
+    @Umbraco.RenderMacro("NavBar")
+
+</header>
+
+<body>
+    @RenderBody()
+</body>
+
+
+
+<footer class="footer">
+      Made by Tobias Skov Ludvigsen;
+      All rights preserved;
+      Contact : Toby.skov.ludvigsen@gmail.com</footer>
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

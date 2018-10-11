@@ -1,0 +1,43 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Members>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "Master.cshtml";
+}
+
+@{
+var memberService = ApplicationContext.Current.Services.MemberService;
+
+var activeMembers = memberService.GetMembersByGroup("Active");
+var prospectMembers = memberService.GetMembersByGroup("prospect");
+
+       
+
+}
+
+<h2>Active Members</h1>
+ @foreach (var member in activeMembers)
+        {
+        <p>@(member.GetValue("firstname") + " " + member.GetValue("lastname")) <br/> 
+        @member.GetValue("adress") + <br/>
+        @(member.GetValue("zip") + " " + member.GetValue("city"))
+        mobile : @member.GetValue("mobile") <br /></p>
+        
+        string fullPath = member.GetValue("photo").ToString();
+        string[] substrings = fullPath.Split(',');
+        string srcString = substrings[2];
+        string[] srcSubStrings = srcString.Split(':');
+        string srcPath = srcSubStrings[1].Replace("\"", "");
+        srcPath = srcPath.Replace("}", "");
+       <img class="img-responsive" class="rounded float-left" class="img-fluid"  src="@srcPath" />
+
+
+    }
+<h2>Prospect Members</h1>
+     @foreach (var member in prospectMembers)
+        {
+        <p>@(member.GetValue("firstname") + " " + member.GetValue("lastname")) <br/> 
+        mobile : @member.GetValue("mobile") <br /></p>
+
+
+    }
+    

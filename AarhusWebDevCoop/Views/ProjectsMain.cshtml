@@ -1,0 +1,13 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.ProjectsMain>
+    @using ContentModels = Umbraco.Web.PublishedContentModels;
+    @{
+    Layout = "Master.cshtml";
+    }
+   <h1>Projects</h1>
+   
+<ul>
+@foreach(var p in CurrentPage.Children){
+<li><a href="@p.Url">@p.prjectTitle</a></li>
+<br/>
+}
+</ul>

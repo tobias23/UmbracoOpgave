@@ -1,0 +1,18 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.About>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "Master.cshtml";
+}
+ <h1>Web Developers Consortium</h1>
+ 
+ 
+ <h2>Our vision:</h2>
+ <p>@Umbraco.Field("vision")</p>
+ <br/>
+ 
+<h2>The people</h2>
+<p>@Umbraco.Field("people")</p> 
+
+<br/>
+<h2>Skills</h2>
+<p>@Umbraco.Field("skills")</p>

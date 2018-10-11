@@ -1,0 +1,13 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = "Master.cshtml";
+}
+	@if (!Members.GetCurrentLoginStatus().IsLoggedIn) {
+		@Html.Partial("LoginPartial");  
+	}
+	else 
+	{
+		@Html.Partial("LoggedOut");
+		
+	}
+
